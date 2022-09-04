@@ -1,2 +1,2 @@
 # learn nopiosee
- The best way to learn Nopiosee
+ The best and only way to learn Nopiosee

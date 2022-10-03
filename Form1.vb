@@ -44,6 +44,7 @@ Public Class Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs)
         Dim p As New QuestionForm   ' Show question thing
         p.seed = DirectCast(sender, Button).Text.Replace("Start level ", "")
+        p.training = False
         p.Show()
         Me.Close()
     End Sub
@@ -56,5 +57,18 @@ Public Class Form1
         Dim wron As Integer = CInt(IO.File.ReadAllText("wrong.dat"))
 
         MsgBox(GetPercentage(wron, corr))
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim inp As String = InputBox("How many questions do you want?")
+        Dim p As New QuestionForm   ' Show question thing
+        Try
+            p.qCount = CInt(inp)
+            p.training = True
+            p.Show()
+            Me.Close()
+        Catch
+            Return
+        End Try
     End Sub
 End Class

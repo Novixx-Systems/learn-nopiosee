@@ -11,17 +11,22 @@ Public Class QuestionForm
     Dim random As Random
     Dim random2 As New Random
     Public seed As Integer = 69420
-    Dim qCount = 0
+    Public qCount = 0
+    Public training As Boolean = False
     Dim wron As Integer = 0
     Dim qDone = 0
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         random = New Random(seed)
-        qCount = 10
-        For x = 1 To seed
-            If x Mod 5 = 0 Then ' Mod is stupid ):<
-                qCount += 1
-            End If
-        Next
+        If Not training Then    ' IF IN TRAINING MODE
+            qCount = 10
+            For x = 1 To seed
+                If x Mod 5 = 0 Then ' Mod is stupid ):<
+                    qCount += 1
+                End If
+            Next
+        Else
+            seed = 50000
+        End If
         '
         '   The words
         '
@@ -42,6 +47,7 @@ Public Class QuestionForm
         If seed > 4 Then
             words.Add("additicíon", "additional")
             words.Add("yian", "anyone")
+            words.Add("greis", "gray")
         End If
         If seed > 5 Then
             words.Add("topbord", "keyboard")
@@ -50,6 +56,7 @@ Public Class QuestionForm
         If seed > 9 Then
             words.Add("rofin", "eight")
             words.Add("yos", "sure")
+            words.Add("groel", "green")
             words.Add("qi", "are you")
         End If
         If seed > 11 Then
@@ -59,7 +66,11 @@ Public Class QuestionForm
             words.Add("diru", "up")
         End If
         If seed > 15 Then
+            words.Add("geel", "yellow")
             words.Add("nó", "know")
+        End If
+        If seed > 17 Then
+            words.Add("amaz", "crazy")
         End If
         Question()
     End Sub
@@ -109,7 +120,7 @@ Public Class QuestionForm
             TextBox1.Text = Nothing
             If qDone >= qCount Then
                 Dim men As New Form1
-                If Not seed < IO.File.ReadAllText("level.dat") Then
+                If Not seed < IO.File.ReadAllText("level.dat") And Not training Then
                     men.IncrementDone(seed + 1, qDone, wron)
                 End If
                 men.Show()

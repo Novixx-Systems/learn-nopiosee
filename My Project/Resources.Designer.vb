@@ -59,50 +59,5 @@ Namespace My.Resources
                 resourceCulture = value
             End Set
         End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        '''</summary>
-        Friend ReadOnly Property corzobe() As System.IO.UnmanagedMemoryStream
-            Get
-                Return ResourceManager.GetStream("corzobe", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        '''</summary>
-        Friend ReadOnly Property jet() As System.IO.UnmanagedMemoryStream
-            Get
-                Return ResourceManager.GetStream("jet", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        '''</summary>
-        Friend ReadOnly Property why() As System.IO.UnmanagedMemoryStream
-            Get
-                Return ResourceManager.GetStream("why", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        '''</summary>
-        Friend ReadOnly Property yajo() As System.IO.UnmanagedMemoryStream
-            Get
-                Return ResourceManager.GetStream("yajo", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        '''</summary>
-        Friend ReadOnly Property yhas() As System.IO.UnmanagedMemoryStream
-            Get
-                Return ResourceManager.GetStream("yhas", resourceCulture)
-            End Get
-        End Property
     End Module
 End Namespace

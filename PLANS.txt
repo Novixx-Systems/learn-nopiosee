@@ -1,2 +1,3 @@
-level 2 - translate questions
-level 3+  mixed
+[X] level 2 - translate questions
+[ ] more question types
+[ ] better scoring system

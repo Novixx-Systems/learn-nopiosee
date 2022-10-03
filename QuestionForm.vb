@@ -37,9 +37,29 @@ Public Class QuestionForm
         words.Add("yhas", "cool")
         words.Add("makli", "easy")
         words.Add("favoritto", "favorite")
+        words.Add("un", "you")
+        words.Add("corzobe", "love")
         If seed > 4 Then
             words.Add("additicíon", "additional")
             words.Add("yian", "anyone")
+        End If
+        If seed > 5 Then
+            words.Add("topbord", "keyboard")
+            words.Add("corzo", "heart")
+        End If
+        If seed > 9 Then
+            words.Add("rofin", "eight")
+            words.Add("yos", "sure")
+            words.Add("qi", "are you")
+        End If
+        If seed > 11 Then
+            words.Add("¿qi yos?", "are you sure?")
+            words.Add("mira", "look")
+            words.Add("un q yhas", "you are cool")
+            words.Add("diru", "up")
+        End If
+        If seed > 15 Then
+            words.Add("nó", "know")
         End If
         Question()
     End Sub
@@ -62,6 +82,10 @@ Public Class QuestionForm
                 answer = "yes"
             Else
                 theWord = words.ElementAt(random2.Next(0, words.Count)).Value
+                '
+                '   We need to do a while loop because we don't want the correct
+                '   answer to be incorrect
+                '
                 While theWord = words.ElementAt(questionNumber).Value
                     theWord = words.ElementAt(random2.Next(0, words.Count)).Value
                 End While
@@ -114,6 +138,11 @@ Public Class QuestionForm
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         TextBox1.Text += "í"
+        TextBox1.Select()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        TextBox1.Text += "ó"
         TextBox1.Select()
     End Sub
 End Class

@@ -31,6 +31,7 @@ Partial Class QuestionForm
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -109,12 +110,23 @@ Partial Class QuestionForm
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.Panel1.Controls.Add(Me.Button4)
         Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Location = New System.Drawing.Point(5, 218)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(632, 61)
         Me.Panel1.TabIndex = 8
+        '
+        'Button4
+        '
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Button4.Location = New System.Drawing.Point(133, 14)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(56, 44)
+        Me.Button4.TabIndex = 8
+        Me.Button4.Text = "ó"
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'QuestionForm
         '
@@ -145,4 +157,5 @@ Partial Class QuestionForm
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents Button4 As Button
 End Class

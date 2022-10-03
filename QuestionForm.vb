@@ -14,7 +14,6 @@ Public Class QuestionForm
     Dim qCount = 0
     Dim wron As Integer = 0
     Dim qDone = 0
-    Dim audioNames As String() = {"corzobe", "why", "yajo", "yhas", "jet"}
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         random = New Random(seed)
         qCount = 10
@@ -23,15 +22,38 @@ Public Class QuestionForm
                 qCount += 1
             End If
         Next
+        '
+        '   The words
+        '
         words.Add("wyhere", "welcome")
         words.Add("y", "to")
         words.Add("henlo", "hello")
+        words.Add("da unis", "remove")
+        words.Add("equ", "is")
+        words.Add("imusing", "with")
+        words.Add("nouhva", "not")
+        words.Add("nieuw", "new")
+        words.Add("verwij", "all")
+        words.Add("yhas", "cool")
+        words.Add("makli", "easy")
+        words.Add("favoritto", "favorite")
+        If seed > 4 Then
+            words.Add("additicíon", "additional")
+            words.Add("yian", "anyone")
+        End If
         Question()
     End Sub
     Sub Question()
         Dim questionText As String = ""
         Dim questionNumber = random2.Next(0, words.Count)
-        Dim questionType = random2.Next(0, 1)
+        Dim questionType
+        If seed < 2 Then
+            questionType = random2.Next(0, 1)
+        ElseIf seed < 3 Then
+            questionType = random2.Next(0, 2)
+        Else
+            questionType = random2.Next(0, 3)
+        End If
         Dim theWord As String = ""
         If questionType = 0 Then
             Dim questionCorrect As Integer = random2.Next(0, 2)
@@ -47,35 +69,15 @@ Public Class QuestionForm
             End If
             questionText = """" & words.ElementAt(questionNumber).Key & """" & " is """ & theWord &
                 """ in English, correct? (Yes/No)"
-
+        ElseIf questionType = 1 Then
+            answer = words.ElementAt(questionNumber).Value
+            questionText = "Translate """ & words.ElementAt(questionNumber).Key & """" & "  to English"
+        ElseIf questionType = 2 Then
+            answer = words.ElementAt(questionNumber).Key
+            questionText = "Translate """ & words.ElementAt(questionNumber).Value & """" & "  to Nopiosee"
         End If
         Label4.Text = qDone.ToString + "/" + qCount.ToString
         Label2.Text = questionText
-    End Sub
-    Sub playSound(index As Integer)
-
-        Select Case index
-
-            Case 0
-                My.Computer.Audio.Play(My.Resources.corzobe, AudioPlayMode.WaitToComplete)
-
-
-            Case 1
-                My.Computer.Audio.Play(My.Resources.why, AudioPlayMode.WaitToComplete)
-
-
-            Case 2
-                My.Computer.Audio.Play(My.Resources.yajo, AudioPlayMode.WaitToComplete)
-
-
-            Case 3
-                My.Computer.Audio.Play(My.Resources.yhas, AudioPlayMode.WaitToComplete)
-
-            Case Else
-                My.Computer.Audio.Play(My.Resources.jet, AudioPlayMode.WaitToComplete)
-
-
-        End Select
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -103,5 +105,15 @@ Public Class QuestionForm
         If e.KeyChar = vbCr Then
             Button1.PerformClick()
         End If
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        TextBox1.Text += "¿"
+        TextBox1.Select()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        TextBox1.Text += "í"
+        TextBox1.Select()
     End Sub
 End Class

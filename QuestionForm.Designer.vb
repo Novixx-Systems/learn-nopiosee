@@ -28,6 +28,10 @@ Partial Class QuestionForm
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button1
@@ -82,11 +86,42 @@ Partial Class QuestionForm
         Me.Label4.TabIndex = 5
         Me.Label4.Text = "1 / qCount"
         '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Button2.Location = New System.Drawing.Point(71, 14)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(56, 44)
+        Me.Button2.TabIndex = 6
+        Me.Button2.Text = "í"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Button3.Location = New System.Drawing.Point(9, 14)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(56, 44)
+        Me.Button3.TabIndex = 7
+        Me.Button3.Text = "¿"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.Panel1.Controls.Add(Me.Button3)
+        Me.Panel1.Controls.Add(Me.Button2)
+        Me.Panel1.Location = New System.Drawing.Point(5, 218)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(632, 61)
+        Me.Panel1.TabIndex = 8
+        '
         'QuestionForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(649, 222)
+        Me.ClientSize = New System.Drawing.Size(649, 291)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -95,6 +130,7 @@ Partial Class QuestionForm
         Me.Controls.Add(Me.Button1)
         Me.Name = "QuestionForm"
         Me.Text = "Form1"
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -106,4 +142,7 @@ Partial Class QuestionForm
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Panel1 As Panel
 End Class

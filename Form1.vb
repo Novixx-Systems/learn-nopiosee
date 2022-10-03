@@ -1,4 +1,7 @@
-﻿Public Class Form1
+﻿Imports System.Runtime
+Imports System.Runtime.InteropServices
+
+Public Class Form1
     Dim level As Integer
     Dim y As Integer = 168
 
@@ -44,11 +47,14 @@
         p.Show()
         Me.Close()
     End Sub
+    Private Function GetPercentage(ByVal previous As Integer, ByVal current As Integer) As String
+        Return (previous & " WRONG" & Environment.NewLine & current & " CORRECT")
+    End Function
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Dim corr As Integer = CInt(IO.File.ReadAllText("correct.dat"))
         Dim wron As Integer = CInt(IO.File.ReadAllText("wrong.dat"))
 
-        MsgBox(CInt(((wron / corr) * 100)).ToString + "% WRONG")
+        MsgBox(GetPercentage(wron, corr))
     End Sub
 End Class

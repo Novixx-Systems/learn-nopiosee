@@ -95,10 +95,10 @@ Public Class QuestionForm
                 """ in English, correct? (Yes/No)"
         ElseIf questionType = 1 Then
             answer = words.ElementAt(questionNumber).Value
-            questionText = "Translate """ & words.ElementAt(questionNumber).Key & """" & "  to English"
+            questionText = "Translate """ & words.ElementAt(questionNumber).Key & """" & " to English"
         ElseIf questionType = 2 Then
             answer = words.ElementAt(questionNumber).Key
-            questionText = "Translate """ & words.ElementAt(questionNumber).Value & """" & "  to Nopiosee"
+            questionText = "Translate """ & words.ElementAt(questionNumber).Value & """" & " to Nopiosee"
         End If
         Label4.Text = qDone.ToString + "/" + qCount.ToString
         Label2.Text = questionText

@@ -107,11 +107,17 @@ Public Class QuestionForm
         If seed > 23 Then
             words.Add("porpel", "purple")
             words.Add("hox", "cute")
-            words.Add("task", "tako")
-            words.Add("tasks", "takoe")
+            words.Add("tako", "task")
+            words.Add("takoe", "tasks")
         End If
         If seed > 24 Then
             words.Add("hanya", "amazing")
+            words.Add("qavo", "joke")
+        End If
+        If seed > 27 Then
+            words.Add("bot", "tree")
+            words.Add("qave", "jokes")
+            words.Add("qava", "joking")
         End If
         Question()
     End Sub

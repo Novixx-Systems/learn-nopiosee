@@ -32,6 +32,8 @@ Partial Class QuestionForm
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.chatAnswer1 = New System.Windows.Forms.Button()
+        Me.chatAnswer2 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -128,11 +130,33 @@ Partial Class QuestionForm
         Me.Button4.Text = "ó"
         Me.Button4.UseVisualStyleBackColor = True
         '
+        'chatAnswer1
+        '
+        Me.chatAnswer1.Location = New System.Drawing.Point(11, 170)
+        Me.chatAnswer1.Name = "chatAnswer1"
+        Me.chatAnswer1.Size = New System.Drawing.Size(306, 42)
+        Me.chatAnswer1.TabIndex = 9
+        Me.chatAnswer1.Text = "Button5"
+        Me.chatAnswer1.UseVisualStyleBackColor = True
+        Me.chatAnswer1.Visible = False
+        '
+        'chatAnswer2
+        '
+        Me.chatAnswer2.Location = New System.Drawing.Point(315, 170)
+        Me.chatAnswer2.Name = "chatAnswer2"
+        Me.chatAnswer2.Size = New System.Drawing.Size(322, 42)
+        Me.chatAnswer2.TabIndex = 10
+        Me.chatAnswer2.Text = "Button6"
+        Me.chatAnswer2.UseVisualStyleBackColor = True
+        Me.chatAnswer2.Visible = False
+        '
         'QuestionForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(649, 291)
+        Me.Controls.Add(Me.chatAnswer2)
+        Me.Controls.Add(Me.chatAnswer1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
@@ -158,4 +182,6 @@ Partial Class QuestionForm
     Friend WithEvents Button3 As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button4 As Button
+    Friend WithEvents chatAnswer1 As Button
+    Friend WithEvents chatAnswer2 As Button
 End Class

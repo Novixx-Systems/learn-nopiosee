@@ -76,7 +76,7 @@ Public Class QuestionForm
             words.Add("rofin", "eight")
             words.Add("yos", "sure")
             words.Add("groel", "green")
-            words.Add("please", "ta mei play")
+            words.Add("ta mei play", "please")
             words.Add("spele", "games")
             words.Add("qi", "are you")
         End If

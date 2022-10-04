@@ -1,3 +1,5 @@
+Imports System.ComponentModel.DataAnnotations.Schema
+
 Public Class QuestionForm
     Dim words As New Dictionary(Of String, String)
     Dim chats As New Dictionary(Of String, Dictionary(Of String, Dictionary(Of String, Integer))) ' Idk any better way to do this
@@ -49,8 +51,8 @@ Public Class QuestionForm
         words.Add("da unis", "remove")
         words.Add("equ", "is")
         words.Add("imusing", "with")
-        words.Add("dog", "dag")
-        words.Add("cat", "kat")
+        words.Add("dag", "dog")
+        words.Add("kat", "cat")
         words.Add("nouhva", "not")
         words.Add("nieuw", "new")
         words.Add("verwij", "all")

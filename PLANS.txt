@@ -1,3 +1,3 @@
 [X] level 2 - translate questions
-[ ] more question types
+[X] more question types
 [ ] better scoring system

@@ -42,6 +42,9 @@ Public Class QuestionForm
         chats.Add("¿do un play spele?", New Dictionary(Of String, Dictionary(Of String, Integer)) From {
             {"ja mei do nouhva play spele!", New Dictionary(Of String, Integer) From {{"ja mei always play spele!", 2}}}
         })
+        chats.Add("ya nym equ mark, mei loo appele en qeve.", New Dictionary(Of String, Dictionary(Of String, Integer)) From {
+            {"¿un loo appele?", New Dictionary(Of String, Integer) From {{"¿why do un loo toilette?", 1}}}
+        })
         '
         '   The words
         '
@@ -52,6 +55,7 @@ Public Class QuestionForm
         words.Add("equ", "is")
         words.Add("imusing", "with")
         words.Add("dag", "dog")
+        words.Add("nym", "name")
         words.Add("kat", "cat")
         words.Add("nouhva", "not")
         words.Add("nieuw", "new")
@@ -72,6 +76,7 @@ Public Class QuestionForm
         If seed > 5 Then
             words.Add("dimi", "what is")
             words.Add("topbord", "keyboard")
+            words.Add("loo", "like")
             words.Add("corzo", "heart")
         End If
         If seed > 9 Then

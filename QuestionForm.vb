@@ -277,7 +277,7 @@ Public Class QuestionForm
     End Sub
 
     Private Sub BtnPronounce_Click(sender As Object, e As EventArgs) Handles BtnPronounce.Click
-        If Label2.Text.Split("""").Length < 1 Then
+        If Label2.Text.Split("""").Length < 1 Or Label2.Text.EndsWith("to Nopiosee") Then
             MsgBox("Nothing to pronounce")
             Return
         End If

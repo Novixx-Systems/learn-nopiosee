@@ -1,4 +1,6 @@
-Imports System.ComponentModel.DataAnnotations.Schema
+Imports System.Reflection.Emit
+Imports System.Speech
+
 
 Public Class QuestionForm
     Dim words As New Dictionary(Of String, String)
@@ -13,7 +15,7 @@ Public Class QuestionForm
     Dim wron As Integer = 0
     Dim qDone = 0
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If Not training Then    ' IF IN TRAINING MODE
+        If Not training Then    ' IF NOT IN TRAINING MODE THEN
             qCount = 10
             For x = 1 To seed
                 If x Mod 5 = 0 Then ' Mod is stupid ):<
@@ -265,5 +267,20 @@ Public Class QuestionForm
             MsgBox("Incorrect answer!")
             Question()
         End If
+    End Sub
+
+    Sub NopioseePronuncioaton(ByVal word As String)
+        Dim voice As New Speech.Synthesis.SpeechSynthesizer
+        voice.Rate = 1
+        voice.Volume = 100
+        voice.SpeakSsml("<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='en-US'>" & word.Replace("1", "zao").Replace("ym", "aim").Replace("0", "null").Replace("oss", "oz").Replace("qe", "k").Replace("le", "lah").Replace(" bal", " bel").Replace("dahg ", " do ").Replace("t", "j").Replace("jj", "j").Replace("ja", "ya").Replace("assoc", "assok") & "</speak>") ' replace english accent with nopiosee accent
+    End Sub
+
+    Private Sub BtnPronounce_Click(sender As Object, e As EventArgs) Handles BtnPronounce.Click
+        If Label2.Text.Split("""").Length < 1 Then
+            MsgBox("Nothing to pronounce")
+            Return
+        End If
+        NopioseePronuncioaton(Label2.Text.Split("""")(1))
     End Sub
 End Class

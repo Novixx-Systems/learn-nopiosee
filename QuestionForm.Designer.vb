@@ -34,6 +34,7 @@ Partial Class QuestionForm
         Me.Button4 = New System.Windows.Forms.Button()
         Me.chatAnswer1 = New System.Windows.Forms.Button()
         Me.chatAnswer2 = New System.Windows.Forms.Button()
+        Me.BtnPronounce = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -112,6 +113,7 @@ Partial Class QuestionForm
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.Panel1.Controls.Add(Me.BtnPronounce)
         Me.Panel1.Controls.Add(Me.Button4)
         Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Controls.Add(Me.Button2)
@@ -150,6 +152,16 @@ Partial Class QuestionForm
         Me.chatAnswer2.UseVisualStyleBackColor = True
         Me.chatAnswer2.Visible = False
         '
+        'BtnPronounce
+        '
+        Me.BtnPronounce.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.BtnPronounce.Location = New System.Drawing.Point(450, 14)
+        Me.BtnPronounce.Name = "BtnPronounce"
+        Me.BtnPronounce.Size = New System.Drawing.Size(179, 44)
+        Me.BtnPronounce.TabIndex = 9
+        Me.BtnPronounce.Text = "Pronounce"
+        Me.BtnPronounce.UseVisualStyleBackColor = True
+        '
         'QuestionForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -184,4 +196,5 @@ Partial Class QuestionForm
     Friend WithEvents Button4 As Button
     Friend WithEvents chatAnswer1 As Button
     Friend WithEvents chatAnswer2 As Button
+    Friend WithEvents BtnPronounce As Button
 End Class

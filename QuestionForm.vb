@@ -148,8 +148,10 @@ Public Class QuestionForm
             questionType = random2.Next(0, 1)
         ElseIf seed < 3 Then
             questionType = random2.Next(0, 2)
-        Else
+        ElseIf seed < 12 Then
             questionType = random2.Next(0, 3)
+        Else
+            questionType = random2.Next(0, 4)
         End If
         Dim theWord As String = ""
         If questionType = 0 Then
@@ -176,6 +178,10 @@ Public Class QuestionForm
         ElseIf questionType = 2 Then
             answer = words.ElementAt(questionNumber).Key
             questionText = "Translate """ & words.ElementAt(questionNumber).Value & """" & " to Nopiosee"
+        ElseIf questionType = 3 Then
+            questionText = "What do you hear?"
+            answer = words.ElementAt(questionNumber).Key
+            NopioseePronuncioaton(answer, -2)
         End If
         Label4.Text = qDone.ToString + "/" + qCount.ToString
         Label2.Text = questionText
@@ -270,18 +276,18 @@ Public Class QuestionForm
         End If
     End Sub
 
-    Sub NopioseePronuncioaton(ByVal word As String)
+    Sub NopioseePronuncioaton(ByVal word As String, speed As Integer)
         Dim voice As New Speech.Synthesis.SpeechSynthesizer
-        voice.Rate = 1
+        voice.Rate = speed
         voice.Volume = 100
-        voice.SpeakSsml("<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='en-US'>" & word.Replace("qu", "q").Replace("ym", "aim").Replace("0", "null").Replace("oss", "oz").Replace("qe", "k").Replace("le", "lah").Replace(" bal", " bel").Replace("dahg ", " do ").Replace("t", "j").Replace("jj", "j").Replace("ja", "ya").Replace("assoc", "assok") & "</speak>") ' replace english accent with nopiosee accent
+        voice.SpeakSsml("<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='en-US'>" & word.Replace("ym", "aim").Replace("0", "null").Replace("oss", "oz").Replace("qe", "k").Replace("le", "lah").Replace(" bal", " bel").Replace("dahg ", " do ").Replace("t", "j").Replace("jj", "j").Replace("ja", "ya").Replace("assoc", "assok") & "</speak>") ' replace english accent with nopiosee accent
     End Sub
 
     Private Sub BtnPronounce_Click(sender As Object, e As EventArgs) Handles BtnPronounce.Click
-        If Label2.Text.Split("""").Length < 1 Or Label2.Text.EndsWith("to Nopiosee") Then
+        If Label2.Text.Split("""").Length < 2 Or Label2.Text.EndsWith("to Nopiosee") Then
             MsgBox("Nothing to pronounce", , "Learn Nopiosee")
             Return
         End If
-        NopioseePronuncioaton(Label2.Text.Split("""")(1))
+        NopioseePronuncioaton(Label2.Text.Split("""")(1), 1)
     End Sub
 End Class

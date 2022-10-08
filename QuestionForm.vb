@@ -200,6 +200,7 @@ Public Class QuestionForm
                 End If
                 men.Show()
                 Me.Close()
+                Return
             End If
             qDone += 1
             Question()
@@ -243,6 +244,7 @@ Public Class QuestionForm
                 inChat = False
                 men.Show()
                 Me.Close()
+                Return
             End If
             qDone += 1
             Question()
@@ -265,6 +267,7 @@ Public Class QuestionForm
                 inChat = False
                 men.Show()
                 Me.Close()
+                Return
             End If
             qDone += 1
             Question()

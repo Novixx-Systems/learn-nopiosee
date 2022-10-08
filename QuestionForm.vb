@@ -68,6 +68,7 @@ Public Class QuestionForm
         words.Add("favoritto", "favorite")
         words.Add("zao", "one")
         words.Add("un", "you")
+        words.Add("qu", "we")
         words.Add("corzobe", "love")
         If seed > 4 Then
             words.Add("additicíon", "additional")
@@ -242,7 +243,7 @@ Public Class QuestionForm
         Else
             wron += 1
             TextBox1.Text = Nothing
-            MsgBox("Incorrect answer!")
+            MsgBox("Incorrect answer!", , "Learn Nopiosee")
             Question()
         End If
     End Sub
@@ -273,12 +274,12 @@ Public Class QuestionForm
         Dim voice As New Speech.Synthesis.SpeechSynthesizer
         voice.Rate = 1
         voice.Volume = 100
-        voice.SpeakSsml("<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='en-US'>" & word.Replace("1", "zao").Replace("ym", "aim").Replace("0", "null").Replace("oss", "oz").Replace("qe", "k").Replace("le", "lah").Replace(" bal", " bel").Replace("dahg ", " do ").Replace("t", "j").Replace("jj", "j").Replace("ja", "ya").Replace("assoc", "assok") & "</speak>") ' replace english accent with nopiosee accent
+        voice.SpeakSsml("<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='en-US'>" & word.Replace("qu", "q").Replace("ym", "aim").Replace("0", "null").Replace("oss", "oz").Replace("qe", "k").Replace("le", "lah").Replace(" bal", " bel").Replace("dahg ", " do ").Replace("t", "j").Replace("jj", "j").Replace("ja", "ya").Replace("assoc", "assok") & "</speak>") ' replace english accent with nopiosee accent
     End Sub
 
     Private Sub BtnPronounce_Click(sender As Object, e As EventArgs) Handles BtnPronounce.Click
         If Label2.Text.Split("""").Length < 1 Or Label2.Text.EndsWith("to Nopiosee") Then
-            MsgBox("Nothing to pronounce")
+            MsgBox("Nothing to pronounce", , "Learn Nopiosee")
             Return
         End If
         NopioseePronuncioaton(Label2.Text.Split("""")(1))

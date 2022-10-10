@@ -69,12 +69,15 @@ Public Class QuestionForm
         words.Add("zao", "one")
         words.Add("un", "you")
         words.Add("qu", "we")
+        words.Add("appel", "apple")
+        words.Add("brood", "bread")
         words.Add("corzobe", "love")
         If seed > 4 Then
             words.Add("additicíon", "additional")
             words.Add("yian", "anyone")
             words.Add("spel", "game")
             words.Add("greis", "gray")
+            words.Add("bor", "fun")
         End If
         If seed > 5 Then
             words.Add("dimi", "what is")
@@ -93,6 +96,7 @@ Public Class QuestionForm
         If seed > 11 Then
             words.Add("¿qi yos?", "are you sure?")
             words.Add("mira", "look")
+            words.Add("boricíon", "boring")
             words.Add("un q yhas", "you are cool")
             words.Add("diru", "up")
         End If
@@ -121,11 +125,19 @@ Public Class QuestionForm
         If seed > 24 Then
             words.Add("hanya", "amazing")
             words.Add("qavo", "joke")
+            words.Add("bro", "brother")
+            words.Add("broe", "brothers")
         End If
         If seed > 27 Then
             words.Add("bot", "tree")
             words.Add("qave", "jokes")
             words.Add("qava", "joking")
+            words.Add("logag", "log")
+        End If
+        If seed > 30 Then
+            words.Add("moord", "murder")
+            words.Add("moorde", "murders")
+            words.Add("comitó", "commit")
         End If
         Question()
     End Sub
@@ -170,7 +182,7 @@ Public Class QuestionForm
                 End While
                 answer = "no"
             End If
-            questionText = """" & words.ElementAt(questionNumber).Key & """" & " is """ & theWord &
+            questionText = """" & words.ElementAt(questionNumber).Key & """" & " in Nopiosee is """ & theWord &
                 """ in English, correct? (Yes/No)"
         ElseIf questionType = 1 Then
             answer = words.ElementAt(questionNumber).Value

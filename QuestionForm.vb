@@ -71,6 +71,7 @@ Public Class QuestionForm
         words.Add("qu", "we")
         words.Add("appel", "apple")
         words.Add("brood", "bread")
+        words.Add("zelde", "same")
         words.Add("corzobe", "love")
         If seed > 4 Then
             words.Add("additicíon", "additional")

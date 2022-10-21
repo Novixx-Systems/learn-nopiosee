@@ -32,20 +32,20 @@ Public Class QuestionForm
         '
         '   The chats
         '
-        chats.Add("¿mei am milan, dimi yar favoritto food?", New Dictionary(Of String, Dictionary(Of String, Integer)) From {
+        chats.Add("¿Mei am Milan, dimi yar favoritto food?", New Dictionary(Of String, Dictionary(Of String, Integer)) From {
             {"ya favoritto food equ an appel!", New Dictionary(Of String, Integer) From {{"mei do nouhva ic a nym.", 1}}}
         })
-        chats.Add("¿mei ic a lot qae cards, do un je tu?", New Dictionary(Of String, Dictionary(Of String, Integer)) From {
-            {"ja, mei would nouhva loo dage.", New Dictionary(Of String, Integer) From {{"ja ta mei play!", 2}}}
+        chats.Add("¿Mei ic a zet qae cards, do un je tu?", New Dictionary(Of String, Dictionary(Of String, Integer)) From {
+            {"Ja, mei would nouhva loo dage.", New Dictionary(Of String, Integer) From {{"Ja ta mei play!", 2}}}
         })
-        chats.Add("¿do un loo dage?", New Dictionary(Of String, Dictionary(Of String, Integer)) From {
-            {"mei only loo kate.", New Dictionary(Of String, Integer) From {{"¿dimi a dag?", 1}}}
+        chats.Add("¿Kel un loo dage?", New Dictionary(Of String, Dictionary(Of String, Integer)) From {
+            {"Mei only loo kate.", New Dictionary(Of String, Integer) From {{"¿Dimi a dag?", 1}}}
         })
-        chats.Add("¿do un play spele?", New Dictionary(Of String, Dictionary(Of String, Integer)) From {
-            {"ja mei do nouhva play spele!", New Dictionary(Of String, Integer) From {{"ja mei always play spele!", 2}}}
+        chats.Add("¿Kel un play spele?", New Dictionary(Of String, Dictionary(Of String, Integer)) From {
+            {"Ja mei kel nouhva play spele!", New Dictionary(Of String, Integer) From {{"Ja mei alwaye play spele!", 2}}}
         })
-        chats.Add("ya nym equ mark, mei loo appele en qeve.", New Dictionary(Of String, Dictionary(Of String, Integer)) From {
-            {"¿un loo appele?", New Dictionary(Of String, Integer) From {{"¿why do un loo toilette?", 1}}}
+        chats.Add("Ya nym equ Mark, mei loo appele en qeve.", New Dictionary(Of String, Dictionary(Of String, Integer)) From {
+            {"¿Un loo appele?", New Dictionary(Of String, Integer) From {{"¿Why kel un loo toilette?", 1}}}
         })
         '
         '   The words
@@ -73,6 +73,7 @@ Public Class QuestionForm
         words.Add("brood", "bread")
         words.Add("zelde", "same")
         words.Add("corzobe", "love")
+        words.Add("alwaye", "always")
         If seed > 4 Then
             words.Add("additicíon", "additional")
             words.Add("yian", "anyone")
